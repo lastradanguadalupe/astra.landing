@@ -1,0 +1,62 @@
+{
+   "checksum": "91050b3af87eca2ed61aced4582c5824",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13421875875270188",
+            "date_last_used": "0",
+            "guid": "536fcb3c-4c8b-4105-a95c-7331b49418cb",
+            "id": "7",
+            "name": "lastradanguadalupe/EMPRENDIMIENTO",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "https://github.com/lastradanguadalupe/EMPRENDIMIENTO",
+            "visit_count": 1
+         } ],
+         "date_added": "13436252366829495",
+         "date_last_used": "0",
+         "date_modified": "13421875875270188",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Barra de favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13436252366829495",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Otros favoritos",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13436252366829495",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Favoritos móviles",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces_v2": {
+         "children": [  ],
+         "date_added": "13436252366829495",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "75aa6670-344f-549d-b742-660f029506ab",
+         "id": "5",
+         "name": "Áreas de trabajo",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CkEKHgiIgQISCLAFUi6hAQAAKg4QABgBIAAoBTAAOABAABIAKhhDQmFpSWdUWk4vWm9hdFp4UWxMMjRBPT1IA6AGDBKMAQgFEocBChx3UkJyWkwrNlBBOWF2S2dqTlA3SlhETGNmdnM9EiQ4YmU3M2M0Mi01YmFhLTViMzMtYjc0MC0yMDI2YmZlMzJmZDQYACAAKAAwlo/Ls6wzOKSRy7OsM0CkkcuzrDNKHG5teDY1c1FEdnhJOFRnRWV2K0ErbnR0b1NuND1lAAAAAMI+AmAAEowBCAEShwEKHHl4Si82ZnZrZWNyN2twNUVRekI0dFdMcGRiRT0SJDM5NzViNjhmLWM1ZjUtNWFhNS04MTIyLTFiN2JmMzU0Zjc0NhgAIAAoADCLyN/hjTI42M3f4Y0yQNjN3+GNMkocYVJDV0xnaEY5YjVJbnFLSUR2dUovanZRa0ZjPWUAAAAAwj4CYAASjAEIAhKHAQocWWNTVG9udkVTUHdxQ3M0TDJjclZodjY4TDk4PRIkYTM3NDRjYTktMTE0Ny01ZWRiLTg3NTYtZGI0ZDRlNjA3OTA4GAAgACgAMIzI3+GNMjjxzd/hjTJA8c3f4Y0yShxvUFZraHdCUmJWNjVLQ1dSMitJT05IV29PdTg9ZQAAAADCPgJgABKsAQgHEqcBChxtRmh1aDZOY2k3RE5hVEFJTkF1dmd6UFZ0ZDA9EiQ1MzZmY2IzYy00YzhiLTQxMDUtYTk1Yy03MzMxYjQ5NDE4Y2IYACAAKAAw3dS8q90zOKTlvKvdM0Ck5byr3TNKHHlrUXhxZjg3SHcxK1IrS2lnWWVXZ1dtQVhzcz1aHiIcSG9LMzRZN0M3VzZCMVNzeEQ5b0lwK3RRN3prPWWFZ+0Pwj4CYAUSjAEIAxKHAQocbmpnRHU4OGVDcnZYcDg2cEQ3ZkhHY3FGcDg4PRIkOWQ4MDcwMWQtYzQzZS01ZDlmLWE4MGQtZjI2MTE2OWI4MWRiGAAgACgAMJHI3+GNMjigzt/hjTJAoM7f4Y0yShx5ek5CMDFjbjU0QTdjUlUwdVQrL1BnbVR0VW89ZQAAAADCPgJgADAAOAA=",
+   "version": 1
+}

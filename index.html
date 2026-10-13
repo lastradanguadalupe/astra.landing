@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Astra — Superá tus límites. Construí tu progreso.</title>
+<meta name="description" content="Tu profe te arma la rutina. Vos entrenás, marcás el día y ves cómo avanzás semana a semana. Empezá a entrenar con Astra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Variables ─────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07172F;--surface:#0B1F3B;--surface-2:#122B4D;
+  --line:#203B60;--blue:#2F7BFF;--teal:#8CB8FF;
+  --muted:#B5C4DA;--white:#fff;
+  --radius:18px;--radius-lg:24px;
+}
+html{scroll-behavior:smooth;background:var(--bg);color:var(--white);font-family:'Manrope',system-ui,sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
+body{background:var(--bg);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--teal);text-decoration:none;transition:color .2s}
+a:hover{color:var(--blue)}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul,ol{list-style:none}
+
+/* ── Skip link ─────────────────────────────────── */
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--blue);color:#fff;padding:8px 18px;border-radius:8px;z-index:9999;font-weight:600}
+.skip-link:focus{top:12px}
+
+/* ── Wrap ──────────────────────────────────────── */
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* ── Typography ────────────────────────────────── */
+h1,h2,h3,h4{font-weight:800;letter-spacing:-.035em;line-height:1.15}
+h1{font-size:clamp(2rem,5vw,3.4rem)}
+h2{font-size:clamp(1.6rem,4vw,2.6rem)}
+h3{font-size:clamp(1.15rem,2.5vw,1.4rem)}
+
+/* ── Buttons ───────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:999px;font-weight:700;font-size:.95rem;transition:all .25s}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 0 24px rgba(47,123,255,.35)}
+.btn-primary:hover,.btn-primary:focus-visible{background:#4a90ff;box-shadow:0 0 32px rgba(47,123,255,.55);transform:translateY(-2px)}
+.btn-ghost{color:var(--teal);border:1.5px solid var(--line);background:transparent}
+.btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--blue);color:#fff}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+/* ── Tag / Label ───────────────────────────────── */
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--line);border-radius:999px;padding:5px 14px}
+
+/* ════════════════════════════════════════════════
+   1. HEADER
+   ════════════════════════════════════════════════ */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(7,23,47,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(32,59,96,.4);padding:14px 0}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color:#fff;text-decoration:none}
+.logo svg{width:30px;height:30px}
+.header-nav{display:flex;align-items:center;gap:4px;white-space:nowrap;flex-shrink:0}
+.header-nav a{font-size:.82rem;font-weight:600;color:var(--muted);padding:6px 10px;border-radius:999px;transition:all .2s}
+.header-nav a:hover,.header-nav a:focus-visible{color:#fff;background:rgba(47,123,255,.12)}
+.header-nav .btn{padding:8px 18px;font-size:.8rem}
+@media(max-width:480px){
+  .logo span{font-size:1.05rem}
+  .logo svg{width:26px;height:26px}
+  .header-nav a{font-size:.76rem;padding:5px 8px}
+  .header-nav .btn{padding:7px 14px;font-size:.76rem}
+}
+@media(max-width:374px){
+  .header-nav .nav-como{display:none}
+}
+
+/* ════════════════════════════════════════════════
+   2. HERO
+   ════════════════════════════════════════════════ */
+.hero{padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:center}
+.hero-text{max-width:560px}
+.hero h1{margin-bottom:18px}
+.hero h1 span{color:var(--teal)}
+.hero-sub{color:var(--muted);font-size:1.05rem;margin-bottom:28px;max-width:480px}
+.hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.hero-note{font-size:.8rem;color:var(--muted)}
+
+/* ── Week card ─────────────────────────────────── */
+.week-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px 24px;max-width:380px}
+.week-card-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
+.week-card-head h3{font-size:1rem;font-weight:700;letter-spacing:-.02em}
+.week-card-head span{font-size:.82rem;color:var(--muted)}
+.week-bars{display:flex;align-items:flex-end;gap:10px;height:150px}
+.week-bar{flex:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px}
+.week-bar-col{width:100%;border-radius:8px 8px 6px 6px;background:var(--surface-2);border:1px solid var(--line);position:relative;cursor:pointer;transition:all .3s ease;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.week-bar-col.checked{background:var(--blue);border-color:var(--blue)}
+.week-bar-col .tick{opacity:0;color:#fff;font-size:.75rem;font-weight:800;transition:opacity .25s}
+.week-bar-col.checked .tick{opacity:1}
+.week-bar span{font-size:.68rem;color:var(--muted);font-weight:600}
+
+/* ════════════════════════════════════════════════
+   3. FUNCIONES (SHOWCASE)
+   ════════════════════════════════════════════════ */
+.showcase{padding:80px 0 100px}
+.showcase-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.showcase-head p{color:var(--muted);margin-top:14px;font-size:.95rem}
+.showcase-body{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.showcase-list{display:flex;flex-direction:column;gap:12px}
+
+/* Feature cards */
+.feat-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;cursor:pointer;transition:all .3s ease;position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;left:0;top:0;width:3px;height:100%;background:transparent;transition:background .3s}
+.feat-card.active{border-color:var(--blue);background:var(--surface-2)}
+.feat-card.active::before{background:var(--blue)}
+.feat-card:hover{border-color:rgba(47,123,255,.5)}
+.feat-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);font-size:.72rem;font-weight:800;color:var(--teal);margin-right:12px;vertical-align:middle}
+.feat-card.active .feat-num{background:var(--blue);color:#fff;border-color:var(--blue)}
+.feat-title{font-size:.95rem;font-weight:700;display:inline;vertical-align:middle}
+.feat-desc{font-size:.82rem;color:var(--muted);margin-top:8px;line-height:1.5}
+
+/* ── Phone frame ───────────────────────────────── */
+.phone-stage{display:flex;align-items:center;justify-content:center;position:relative;min-height:580px}
+.phone-bg{position:absolute;inset:0;border-radius:var(--radius-lg);border:1px solid var(--line);background:radial-gradient(ellipse at 50% 30%,rgba(47,123,255,.10),transparent 70%);overflow:hidden}
+.phone-bg::before,.phone-bg::after{content:'';position:absolute;border-radius:50%;border:1px solid rgba(47,123,255,.08)}
+.phone-bg::before{width:300px;height:300px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.phone-bg::after{width:460px;height:460px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.phone-frame{position:relative;width:270px;border-radius:52px;padding:11px;background:linear-gradient(165deg,#3a4658 0%,#0a0d12 50%,#4a5668 100%);box-shadow:
+  inset 0 0 0 1.5px rgba(255,255,255,.10),
+  inset 0 0 0 3px rgba(0,0,0,.8),
+  inset 0 2px 6px rgba(0,0,0,.5),
+  0 24px 60px rgba(0,0,0,.6),
+  0 0 80px rgba(47,123,255,.10);
+z-index:2}
+/* Physical buttons */
+.phone-frame::before{content:'';position:absolute;right:-4px;top:120px;width:4px;height:78px;border-radius:0 3px 3px 0;background:linear-gradient(180deg,#4a5668,#1a1e28,#4a5668)}
+.phone-frame::after{content:'';position:absolute;left:-4px;top:100px;width:4px;height:32px;border-radius:3px 0 0 3px;background:linear-gradient(180deg,#4a5668,#1a1e28,#4a5668);box-shadow:0 46px 0 0 #2a2e38,0 72px 0 0 #2a2e38}
+.phone-screen{position:relative;border-radius:41px;background:#000;overflow:hidden;padding-top:34px;aspect-ratio:9/19.2}
+/* Dynamic island */
+.phone-island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:30%;height:21px;background:#000;border-radius:20px;z-index:4}
+/* Glass reflection */
+.phone-glass{position:absolute;inset:0;border-radius:41px;background:linear-gradient(135deg,rgba(255,255,255,.10) 0%,transparent 50%);z-index:3;pointer-events:none}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;position:absolute;top:0;left:0;opacity:0;transition:opacity .5s ease}
+.phone-screen img.active{opacity:1}
+
+/* Vol buttons via box-shadow on ::after */
+
+/* ════════════════════════════════════════════════
+   4. CÓMO EMPEZAR
+   ════════════════════════════════════════════════ */
+.como{padding:80px 0 100px}
+.como-head{text-align:center;margin-bottom:56px}
+.steps-list{display:flex;gap:24px;align-items:flex-end}
+.step-card{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px 26px 28px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.step-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--teal));transform:scaleX(0);transform-origin:left;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+/* Staircase heights */
+.step-card:nth-child(1){min-height:260px}
+.step-card:nth-child(2){min-height:300px}
+.step-card:nth-child(3){min-height:340px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line);font-size:1.1rem;font-weight:800;color:var(--teal);margin-bottom:18px;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.step-card h3{margin-bottom:10px}
+.step-card p{color:var(--muted);font-size:.88rem;line-height:1.55}
+
+/* Animations (JS adds .in-view) */
+html.js .steps-list .step-card{opacity:0;transform:translateY(46px) scale(.97)}
+html.js .steps-list.in-view .step-card{opacity:1;transform:translateY(0) scale(1);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+html.js .steps-list.in-view .step-card:nth-child(1){transition-delay:0s}
+html.js .steps-list.in-view .step-card:nth-child(2){transition-delay:.45s}
+html.js .steps-list.in-view .step-card:nth-child(3){transition-delay:.9s}
+html.js .steps-list.in-view .step-card::before{transform:scaleX(1)}
+html.js .steps-list.in-view .step-card:nth-child(1)::before{transition-delay:.3s}
+html.js .steps-list.in-view .step-card:nth-child(2)::before{transition-delay:.75s}
+html.js .steps-list.in-view .step-card:nth-child(3)::before{transition-delay:1.2s}
+/* Number pop */
+html.js .steps-list.in-view .step-num{animation:numPop .5s cubic-bezier(.34,1.56,.64,1) both}
+html.js .steps-list.in-view .step-card:nth-child(1) .step-num{animation-delay:.15s}
+html.js .steps-list.in-view .step-card:nth-child(2) .step-num{animation-delay:.6s}
+html.js .steps-list.in-view .step-card:nth-child(3) .step-num{animation-delay:1.05s}
+@keyframes numPop{0%{transform:scale(.5)}50%{transform:scale(1.15)}100%{transform:scale(1)}}
+
+/* Shine sweep */
+html.js .steps-list.in-view .step-card::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.04),transparent);animation:shineSweep 1s ease both}
+html.js .steps-list.in-view .step-card:nth-child(1)::after{animation-delay:.5s}
+html.js .steps-list.in-view .step-card:nth-child(2)::after{animation-delay:.95s}
+html.js .steps-list.in-view .step-card:nth-child(3)::after{animation-delay:1.4s}
+@keyframes shineSweep{to{left:150%}}
+
+/* Card 3 glow pulse */
+html.js .steps-list.in-view .step-card:nth-child(3){animation:glowPulse 3s ease-in-out 1.8s infinite}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(140,184,255,0)}50%{box-shadow:0 0 28px rgba(140,184,255,.18)}}
+
+/* Desktop hover */
+@media(hover:hover){
+  .step-card:hover{transform:translateY(-6px);box-shadow:0 8px 32px rgba(47,123,255,.18)}
+}
+
+/* ── prefers-reduced-motion ────────────────────── */
+@media(prefers-reduced-motion:reduce){
+  html.js .steps-list .step-card{opacity:1!important;transform:none!important;transition:none!important}
+  html.js .steps-list .step-card::before{transform:scaleX(1)!important;transition:none!important}
+  html.js .steps-list .step-card::after{animation:none!important}
+  html.js .steps-list.in-view .step-num{animation:none!important}
+  html.js .steps-list.in-view .step-card:nth-child(3){animation:none!important}
+  .phone-screen img{transition:none!important}
+}
+
+/* ════════════════════════════════════════════════
+   5. PARA PROFES
+   ════════════════════════════════════════════════ */
+.profes{padding:80px 0 100px}
+.profes .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.profes-text .tag{margin-bottom:18px}
+.profes-text h2{margin-bottom:18px}
+.profes-text .btn{margin-top:22px;margin-bottom:10px}
+.profes-note{font-size:.78rem;color:var(--muted)}
+.profes-points{margin-top:24px;display:flex;flex-direction:column;gap:12px}
+.profes-points li{padding-left:22px;position:relative;color:var(--muted);font-size:.9rem;line-height:1.55}
+.profes-points li::before{content:'';position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+
+/* Panel mockup */
+.panel-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 26px;max-width:480px}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
+.panel-head h3{font-size:1rem;font-weight:700}
+.panel-head span{font-size:.72rem;color:var(--muted);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.panel-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.metric{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:16px 14px;text-align:center}
+.metric strong{display:block;font-size:1.5rem;font-weight:800;color:var(--white)}
+.metric span{font-size:.7rem;color:var(--muted);line-height:1.3;display:block;margin-top:2px}
+.panel-activity h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}
+.student-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.student-row:last-child{border-bottom:none}
+.avatar{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:800;color:#fff;flex-shrink:0}
+.avatar-1{background:#2F7BFF}
+.avatar-2{background:#6c5ce7}
+.avatar-3{background:#e17055}
+.student-info{flex:1;min-width:0}
+.student-name{font-size:.85rem;font-weight:700}
+.student-detail{font-size:.72rem;color:var(--muted)}
+.student-status{font-size:.68rem;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.status-ok{color:#00b894;background:rgba(0,184,148,.12)}
+.status-warn{color:#fdcb6e;background:rgba(253,203,110,.12)}
+.panel-footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.panel-footer span{font-size:.78rem;color:var(--muted)}
+.panel-footer a{font-size:.78rem;font-weight:700;color:var(--teal)}
+
+/* ════════════════════════════════════════════════
+   6. PREGUNTAS FRECUENTES
+   ════════════════════════════════════════════════ */
+.faq{padding:80px 0 100px}
+.faq-head{text-align:center;margin-bottom:48px}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+.faq-item[open]{border-color:rgba(47,123,255,.4)}
+.faq-item summary{padding:20px 24px;font-weight:700;font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background .2s}
+.faq-item summary:hover{background:rgba(47,123,255,.05)}
+.faq-item summary::marker,.faq-item summary::-webkit-details-marker{display:none}
+.faq-chevron{width:20px;height:20px;transition:transform .3s;flex-shrink:0;color:var(--muted)}
+.faq-item[open] .faq-chevron{transform:rotate(180deg);color:var(--blue)}
+.faq-answer{padding:0 24px 20px;color:var(--muted);font-size:.9rem;line-height:1.6}
+
+/* ════════════════════════════════════════════════
+   7. CTA FINAL
+   ════════════════════════════════════════════════ */
+.cta-section{padding:40px 0 80px}
+.cta-card{background:linear-gradient(135deg,#1a3a6e 0%,var(--blue) 100%);border-radius:var(--radius-lg);padding:64px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-card::before,.cta-card::after{content:'';position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.10);pointer-events:none}
+.cta-card::before{width:300px;height:300px;top:-80px;right:-80px}
+.cta-card::after{width:200px;height:200px;top:-30px;right:-30px}
+.cta-card .tag{border-color:rgba(255,255,255,.25);color:#fff;margin-bottom:22px}
+.cta-card h2{margin-bottom:16px}
+.cta-card p{color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 28px;font-size:.95rem}
+
+/* ════════════════════════════════════════════════
+   8. FOOTER
+   ════════════════════════════════════════════════ */
+.site-footer{background:linear-gradient(180deg,#050F20 0%,#07172F 100%);padding:64px 0 0;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:40px}
+.footer-brand .logo{margin-bottom:18px}
+.footer-brand p{color:var(--muted);font-size:.85rem;max-width:320px;line-height:1.6}
+.footer-col-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line);position:relative}
+.footer-col-title::after{content:'';position:absolute;bottom:-1px;left:0;width:28px;height:2px;background:var(--blue)}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{color:var(--muted);font-size:.85rem;font-weight:500;transition:color .2s,transform .2s;display:inline-block}
+.footer-links a:hover{color:#fff;transform:translateX(4px)}
+.footer-bottom{border-top:1px solid var(--line);padding:20px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom small{color:var(--muted);font-size:.78rem}
+.footer-bottom .motto{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--teal)}
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+@media(max-width:760px){
+  .hero{padding:48px 0 60px}
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .hero-text{max-width:100%}
+  .week-card{max-width:100%;padding:22px 18px 18px}
+  .showcase{padding:60px 0 70px}
+  .showcase-head{margin-bottom:36px}
+  .showcase-body{grid-template-columns:1fr;gap:36px}
+  .phone-stage{order:-1;min-height:auto;padding:12px 0}
+  .phone-frame{width:min(260px,78vw)}
+  .como{padding:60px 0 70px}
+  .como-head{margin-bottom:36px}
+  .profes{padding:60px 0 70px}
+  .profes .wrap{grid-template-columns:1fr;gap:36px}
+  .panel-card{max-width:100%}
+  .steps-list{flex-direction:column;gap:18px}
+  .step-card{min-height:auto!important}
+  .step-card:nth-child(1),.step-card:nth-child(2),.step-card:nth-child(3){min-height:auto!important}
+  .faq{padding:60px 0 70px}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-brand{margin-bottom:4px}
+  .footer-nav-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:10px}
+  .phone-frame{width:min(250px,76vw)}
+  .phone-bg{display:none}
+  .cta-card{padding:44px 22px}
+  .cta-card h2{font-size:1.6rem}
+}
+@media(max-width:411px){
+  .wrap{padding:0 18px}
+  .hero h1{font-size:1.85rem}
+  .hero-sub{font-size:.92rem;margin-bottom:22px}
+  .hero-actions{gap:12px}
+  .btn{padding:12px 22px;font-size:.88rem}
+  .week-bars{gap:6px;height:120px}
+  .panel-metrics{grid-template-columns:repeat(3,1fr);gap:8px}
+  .metric{padding:12px 6px}
+  .metric strong{font-size:1.25rem}
+  .metric span{font-size:.65rem}
+}
+@media(max-width:360px){
+  .wrap{padding:0 16px}
+  .hero h1{font-size:1.7rem}
+  .btn{padding:11px 18px;font-size:.84rem}
+  .week-bars{gap:5px;height:110px}
+  .feat-card{padding:16px 16px}
+}
+@media(max-width:340px){
+  .wrap{padding:0 14px}
+  .hero h1{font-size:1.55rem}
+  .hero-sub{font-size:.88rem}
+  .hero-actions{gap:10px}
+  .btn{padding:10px 16px;font-size:.8rem}
+  .week-bars{gap:4px;height:100px}
+  .week-bar span{font-size:.62rem}
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<!-- ════════ 1. HEADER ════════ -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Astra — Inicio">
+      <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M15 2L5 26h4l6-14 6 14h4L15 2z" fill="#2F7BFF"/>
+        <circle cx="15" cy="6" r="2" fill="#8CB8FF"/>
+      </svg>
+      <span>astra</span>
+    </a>
+    <nav class="header-nav" aria-label="Navegación principal">
+      <a href="#como" class="nav-como">Cómo empezar</a>
+      <a href="#profes">Para profes</a>
+      <a href="#" class="btn btn-primary">Ingresar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ════════ 2. HERO ════════ -->
+<main id="main">
+<section class="hero" aria-label="Presentación">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>Superá tus límites.<br><span>Construí tu progreso.</span></h1>
+      <p class="hero-sub">Tu profe te arma la rutina. Vos entrenás, marcás el día y ves cómo avanzás semana a semana.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Entrar a Astra</a>
+        <a href="#como" class="btn btn-ghost">Ver cómo empezar</a>
+      </div>
+      <p class="hero-note">Ingresás con tu cuenta de Google o con tu email.</p>
+    </div>
+    <div class="week-card" aria-label="Tu progreso semanal">
+      <div class="week-card-head">
+        <h3>Tu semana</h3>
+        <span>3 de 7 días</span>
+      </div>
+      <div class="week-bars" role="group" aria-label="Días de la semana">
+        <div class="week-bar">
+          <button class="week-bar-col checked" style="height:35%" aria-label="Lunes — completado" aria-pressed="true"><span class="tick">✓</span></button>
+          <span>Lun</span>
+        </div>
+        <div class="week-bar">
+          <button class="week-bar-col" style="height:45%" aria-label="Martes" aria-pressed="false"><span class="tick">✓</span></button>
+          <span>Mar</span>
+        </div>
+        <div class="week-bar">
+          <button class="week-bar-col checked" style="height:55%" aria-label="Miércoles — completado" aria-pressed="true"><span class="tick">✓</span></button>
+          <span>Mié</span>
+        </div>
+        <div class="week-bar">
+          <button class="week-bar-col checked" style="height:65%" aria-label="Jueves — completado" aria-pressed="true"><span class="tick">✓</span></button>
+          <span>Jue</span>
+        </div>
+        <div class="week-bar">
+          <button class="week-bar-col" style="height:75%" aria-label="Viernes" aria-pressed="false"><span class="tick">✓</span></button>
+          <span>Vie</span>
+        </div>
+        <div class="week-bar">
+          <button class="week-bar-col" style="height:85%" aria-label="Sábado" aria-pressed="false"><span class="tick">✓</span></button>
+          <span>Sáb</span>
+        </div>
+        <div class="week-bar">
+          <button class="week-bar-col" style="height:100%" aria-label="Domingo" aria-pressed="false"><span class="tick">✓</span></button>
+          <span>Dom</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 3. FUNCIONES ════════ -->
+<section class="showcase" id="funciones" aria-label="Funciones">
+  <div class="wrap">
+    <div class="showcase-head">
+      <h2>Todo tu entrenamiento, en un solo lugar.</h2>
+      <p>Deslizá por las funciones y descubrí cómo Astra te acompaña antes, durante y después de entrenar.</p>
+    </div>
+    <div class="showcase-body">
+      <div class="showcase-list" role="tablist" aria-label="Funciones de la app">
+        <button class="feat-card active" role="tab" aria-selected="true" aria-controls="phone-screen" data-index="0" id="feat-tab-0">
+          <span class="feat-num">01</span>
+          <span class="feat-title">Inicio</span>
+          <p class="feat-desc">Un resumen claro de tu día, tu descanso y tu progreso.</p>
+        </button>
+        <button class="feat-card" role="tab" aria-selected="false" aria-controls="phone-screen" data-index="1" id="feat-tab-1">
+          <span class="feat-num">02</span>
+          <span class="feat-title">Rutina semanal</span>
+          <p class="feat-desc">Consultá los bloques de entrenamiento y organizá tu semana.</p>
+        </button>
+        <button class="feat-card" role="tab" aria-selected="false" aria-controls="phone-screen" data-index="2" id="feat-tab-2">
+          <span class="feat-num">03</span>
+          <span class="feat-title">Ejercicios</span>
+          <p class="feat-desc">Revisá los ejercicios y marcá cada bloque como completado.</p>
+        </button>
+        <button class="feat-card" role="tab" aria-selected="false" aria-controls="phone-screen" data-index="3" id="feat-tab-3">
+          <span class="feat-num">04</span>
+          <span class="feat-title">Historial</span>
+          <p class="feat-desc">Encontrá tus sesiones registradas y el tiempo entrenado.</p>
+        </button>
+        <button class="feat-card" role="tab" aria-selected="false" aria-controls="phone-screen" data-index="4" id="feat-tab-4">
+          <span class="feat-num">05</span>
+          <span class="feat-title">Perfil</span>
+          <p class="feat-desc">Accedé a tus datos, medidas y calendario personal.</p>
+        </button>
+      </div>
+
+      <div class="phone-stage" id="phone-screen" role="tabpanel" aria-label="Vista previa de la app">
+        <div class="phone-bg" aria-hidden="true"></div>
+        <div class="phone-frame">
+          <div class="phone-island" aria-hidden="true"></div>
+          <div class="phone-screen">
+            <img src="screen-inicio.png" alt="Pantalla de inicio de Astra" class="active" loading="lazy">
+            <img src="screen-rutina.png" alt="Pantalla de rutina semanal" loading="lazy">
+            <img src="screen-ejercicios.png" alt="Pantalla de ejercicios" loading="lazy">
+            <img src="screen-historial.png" alt="Pantalla de historial" loading="lazy">
+            <img src="screen-perfil.png" alt="Pantalla de perfil" loading="lazy">
+          </div>
+          <div class="phone-glass" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 4. CÓMO EMPEZAR ════════ -->
+<section class="como" id="como" aria-label="Cómo empezar">
+  <div class="wrap">
+    <div class="como-head">
+      <h2>Cómo empezar</h2>
+    </div>
+    <ol class="steps-list">
+      <li class="step-card">
+        <div class="step-num">1</div>
+        <h3>Ingresá</h3>
+        <p>Entrá con tu cuenta de Google o con tu email. Sin vueltas, en un toque.</p>
+      </li>
+      <li class="step-card">
+        <div class="step-num">2</div>
+        <h3>Contanos de vos</h3>
+        <p>Respondé unas preguntas rápidas: fecha de nacimiento, peso, altura, objetivo y nivel. Lesiones y enfermedades son opcionales.</p>
+      </li>
+      <li class="step-card">
+        <div class="step-num">3</div>
+        <h3>Entrená</h3>
+        <p>Cuando tu profe te asigna la rutina, aparece en la pestaña Rutina. Hasta que llegue, la app te avisa.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ════════ 5. PARA PROFES ════════ -->
+<section class="profes" id="profes" aria-label="Para profesionales">
+  <div class="wrap">
+    <div class="profes-text">
+      <span class="tag">Astra para profesionales</span>
+      <h2>Menos tiempo organizando. Más tiempo haciendo crecer a tus alumnos.</h2>
+      <a href="#" class="btn btn-primary">Conocé el panel ↗</a>
+      <p class="profes-note">El acceso de profes es por invitación.</p>
+      <ul class="profes-points">
+        <li>Consultá la actividad y el estado de las rutinas de tus alumnos.</li>
+        <li>Configurá series, repeticiones, descansos y peso de forma simple.</li>
+        <li>Elegí ejercicios del catálogo y personalizá tus consejos.</li>
+      </ul>
+    </div>
+    <div class="panel-card" aria-label="Panel de seguimiento (ejemplo)">
+      <div class="panel-head">
+        <h3>Panel de seguimiento</h3>
+        <span>Actualizado</span>
+      </div>
+      <div class="panel-metrics">
+        <div class="metric">
+          <strong>24</strong>
+          <span>Alumnos en seguimiento</span>
+        </div>
+        <div class="metric">
+          <strong>18</strong>
+          <span>Rutinas asignadas</span>
+        </div>
+        <div class="metric">
+          <strong>82%</strong>
+          <span>Actividad esta semana</span>
+        </div>
+      </div>
+      <div class="panel-activity">
+        <h4>Actividad reciente</h4>
+        <div class="student-row">
+          <div class="avatar avatar-1" aria-hidden="true">LM</div>
+          <div class="student-info">
+            <div class="student-name">Lucía M.</div>
+            <div class="student-detail">Rutina de fuerza · 4 sesiones</div>
+          </div>
+          <span class="student-status status-ok">Al día</span>
+        </div>
+        <div class="student-row">
+          <div class="avatar avatar-2" aria-hidden="true">TG</div>
+          <div class="student-info">
+            <div class="student-name">Tomás G.</div>
+            <div class="student-detail">Hipertrofia · 3 sesiones</div>
+          </div>
+          <span class="student-status status-ok">Al día</span>
+        </div>
+        <div class="student-row">
+          <div class="avatar avatar-3" aria-hidden="true">SP</div>
+          <div class="student-info">
+            <div class="student-name">Sofía P.</div>
+            <div class="student-detail">Rutina inicial · Pendiente</div>
+          </div>
+          <span class="student-status status-warn">Revisar</span>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <span>Resumen semanal</span>
+        <a href="#">Ver seguimiento ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 6. PREGUNTAS FRECUENTES ════════ -->
+<section class="faq" id="preguntas" aria-label="Preguntas frecuentes">
+  <div class="wrap">
+    <div class="faq-head">
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" name="faq">
+        <summary>
+          ¿Necesito tener un profe para usarla?
+          <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Sí, Astra está pensada para que trabajes con un profe que te arme la rutina. Vos entrenás y registrás tu progreso; tu profe se encarga de diseñar el plan que necesitás.</p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          ¿Tengo que contar mis lesiones o enfermedades?
+          <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>No es obligatorio. Esos campos son opcionales y están ahí para que tu profe tenga la información necesaria si decide adaptarte la rutina.</p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          ¿Dónde la puedo usar?
+          <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Desde el navegador de cualquier dispositivo: celular, tablet o computadora. No necesitás descargar nada, entrás y listo.</p>
+        </div>
+      </details>
+      <details class="faq-item" name="faq">
+        <summary>
+          ¿Cómo ingreso?
+          <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="faq-answer">
+          <p>Podés ingresar con tu cuenta de Google o con tu email y contraseña. Si es tu primera vez, creamos tu cuenta automáticamente.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 7. CTA FINAL ════════ -->
+<section class="cta-section" aria-label="Llamada a la acción">
+  <div class="wrap">
+    <div class="cta-card">
+      <span class="tag">Tu próximo nivel empieza hoy</span>
+      <h2>No esperes al momento perfecto.<br>Empezá a superarte.</h2>
+      <p>Entrá a Astra, encontrá tu rutina y convertí cada entrenamiento en un paso hacia adelante.</p>
+      <a href="#" class="btn btn-primary">Entrar a Astra →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ════════ 8. FOOTER ════════ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="Astra">
+          <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:36px;height:36px">
+            <path d="M15 2L5 26h4l6-14 6 14h4L15 2z" fill="#2F7BFF"/>
+            <circle cx="15" cy="6" r="2" fill="#8CB8FF"/>
+          </svg>
+          <span style="font-size:1.3rem">astra</span>
+        </a>
+        <p>Cada entrenamiento te acerca a tu mejor versión. Planificá, entrená y seguí avanzando.</p>
+      </div>
+      <div class="footer-nav-wrap">
+        <div>
+          <div class="footer-col-title">Explorá</div>
+          <div class="footer-links">
+            <a href="#funciones">Funciones</a>
+            <a href="#como">Cómo empezar</a>
+            <a href="#profes">Para profes</a>
+            <a href="#preguntas">Preguntas frecuentes</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Tu cuenta</div>
+          <div class="footer-links">
+            <a href="#">Ingresar a Astra</a>
+            <a href="#">Política de privacidad</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2026 Astra. Todos los derechos reservados.</small>
+      <span class="motto">DISCIPLINA · CONSTANCIA · PROGRESO</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Mark JS availability ──────────────────────── */
+document.documentElement.classList.add('js');
+
+/* ── Week bar toggle ───────────────────────────── */
+document.querySelectorAll('.week-bar-col').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const isChecked=btn.classList.toggle('checked');
+    btn.setAttribute('aria-pressed',isChecked);
+    const label=btn.closest('.week-bar').querySelector('span').textContent;
+    btn.setAttribute('aria-label',label+(isChecked?' — completado':''));
+    // Update counter
+    const count=document.querySelectorAll('.week-bar-col.checked').length;
+    document.querySelector('.week-card-head span').textContent=count+' de 7 días';
+  });
+});
+
+/* ── Showcase carousel ─────────────────────────── */
+(function(){
+  const tabs=document.querySelectorAll('.feat-card');
+  const imgs=document.querySelectorAll('.phone-screen img');
+  let current=0;
+  let timer;
+  let paused=false;
+
+  function goTo(i){
+    tabs[current].classList.remove('active');
+    tabs[current].setAttribute('aria-selected','false');
+    imgs[current].classList.remove('active');
+    current=i;
+    tabs[current].classList.add('active');
+    tabs[current].setAttribute('aria-selected','true');
+    imgs[current].classList.add('active');
+  }
+
+  function startTimer(){
+    clearInterval(timer);
+    timer=setInterval(()=>{if(!paused)goTo((current+1)%5)},5000);
+  }
+
+  tabs.forEach((tab,i)=>{
+    tab.addEventListener('click',()=>{goTo(i);startTimer()});
+    tab.addEventListener('mouseenter',()=>{paused=true});
+    tab.addEventListener('mouseleave',()=>{paused=false});
+    tab.addEventListener('focus',()=>{paused=true});
+    tab.addEventListener('blur',()=>{paused=false});
+  });
+
+  startTimer();
+})();
+
+/* ── Steps IntersectionObserver ────────────────── */
+(function(){
+  const list=document.querySelector('.steps-list');
+  if(!list||!('IntersectionObserver' in window))return;
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        list.classList.add('in-view');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:.25});
+  obs.observe(list);
+})();
+
+/* ── Smooth scroll for anchors ─────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id==='#')return;
+    const target=document.querySelector(id);
+    if(target){
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth',block:'start'});
+      target.focus({preventScroll:true});
+    }
+  });
+});
+</script>
+</body>
+</html>

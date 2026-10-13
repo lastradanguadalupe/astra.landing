@@ -1,0 +1,6 @@
+2026/10/12-01:24:34.021 1f68 Reusing MANIFEST C:\Users\usuario\astra-landing\temp-profile-cdp\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/10/12-01:24:34.022 1f68 Recovering log #4
+2026/10/12-01:24:34.023 1f68 Reusing old log C:\Users\usuario\astra-landing\temp-profile-cdp\Default\EdgeCoupons/coupons_data.db/000004.log 
+2026/10/12-01:24:34.132 34b4 Level-0 table #8: started
+2026/10/12-01:24:34.139 34b4 Level-0 table #8: 683455 bytes OK
+2026/10/12-01:24:34.144 34b4 Delete type=0 #4

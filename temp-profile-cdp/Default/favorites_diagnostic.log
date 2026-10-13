@@ -1,0 +1,42 @@
+2026-10-12 04:19:27.093: [INFO] CurrentProfilePath: C:\Users\usuario\astra-landing\temp-profile-cdp\Default
+2026-10-12 04:19:27.093: [INFO] Profiles total count: 1
+2026-10-12 04:19:27.093: [INFO] Profile: name=Perfil 1 path=C:\Users\usuario\astra-landing\temp-profile-cdp\Default lastActive=2026-10-12T04:19:27.021Z
+2026-10-12 04:19:27.093: [INFO] LastUsedProfileDir: C:\Users\usuario\astra-landing\temp-profile-cdp\Default
+2026-10-12 04:19:27.093: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\usuario\astra-landing\temp-profile-cdp\Default lastActive=2026-10-12T04:19:27.021Z
+2026-10-12 04:19:27.093: [INFO] OnDoneLoading sync enabled: 0
+2026-10-12 04:19:27.093: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 04:19:27.093: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 04:19:27.093: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 04:19:27.095: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-12 04:19:27.303: [INFO] VisibilityChanged: 0
+2026-10-12 04:19:28.988: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-12 04:19:28.999: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-12 04:19:29.015: [INFO] Primary account changed.
+2026-10-12 04:19:29.015: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-10-12 04:19:29.038: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-12 04:19:29.077: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-12 04:19:32.580: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-12 04:19:32.593: [INFO] BookmarkBarPrefChanged showBar=0 showBarNTP=1
+2026-10-12 04:19:32.715: [INFO] Sync initialization duration: 3499ms
+2026-10-12 04:24:29.206: [INFO] CurrentProfilePath: C:\Users\usuario\astra-landing\temp-profile-cdp\Default
+2026-10-12 04:24:29.206: [INFO] Profiles total count: 1
+2026-10-12 04:24:29.206: [INFO] Profile: name=Personal path=C:\Users\usuario\astra-landing\temp-profile-cdp\Default lastActive=2026-10-12T04:19:27.021Z
+2026-10-12 04:24:29.206: [INFO] LastUsedProfileDir: C:\Users\usuario\astra-landing\temp-profile-cdp\Default
+2026-10-12 04:24:29.206: [INFO] MostRecentlyActiveProfile: name=Personal path=C:\Users\usuario\astra-landing\temp-profile-cdp\Default lastActive=2026-10-12T04:19:27.021Z
+2026-10-12 04:24:29.206: [INFO] OnDoneLoading sync enabled: 1
+2026-10-12 04:24:29.206: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 04:24:29.206: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 04:24:29.206: [INFO] BookmarksSnapshot Startup total=1 bar=1 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 04:24:29.393: [INFO] VisibilityChanged: 0
+2026-10-12 04:24:29.593: [INFO] Sync initialization duration: 380ms
+2026-10-12 04:40:22.593: [INFO] CurrentProfilePath: C:\Users\usuario\astra-landing\temp-profile-cdp\Default
+2026-10-12 04:40:22.593: [INFO] Profiles total count: 1
+2026-10-12 04:40:22.595: [INFO] Profile: name=Personal path=C:\Users\usuario\astra-landing\temp-profile-cdp\Default lastActive=2026-10-12T04:40:22.567Z
+2026-10-12 04:40:22.595: [INFO] LastUsedProfileDir: C:\Users\usuario\astra-landing\temp-profile-cdp\Default
+2026-10-12 04:40:22.595: [INFO] MostRecentlyActiveProfile: name=Personal path=C:\Users\usuario\astra-landing\temp-profile-cdp\Default lastActive=2026-10-12T04:40:22.567Z
+2026-10-12 04:40:22.595: [INFO] OnDoneLoading sync enabled: 1
+2026-10-12 04:40:22.595: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-12 04:40:22.595: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-12 04:40:22.595: [INFO] BookmarksSnapshot Startup total=1 bar=1 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-12 04:40:22.723: [INFO] VisibilityChanged: 0
+2026-10-12 04:40:22.800: [INFO] Sync initialization duration: 198ms
